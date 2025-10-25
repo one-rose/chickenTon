@@ -65,20 +65,20 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'YOUR_ANDROID_API_KEY',
-    appId: 'YOUR_ANDROID_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
+    apiKey: 'AIzaSyBzftiQgpUoJxsLYk80uJ4ijNbWlZ5LhQ0',
+    appId: '1:1065766178301:android:c419d261a67ce777869d94',
+    messagingSenderId: '1065766178301',
+    projectId: 'eisengarden-e083f',
+    storageBucket: 'eisengarden-e083f.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'YOUR_IOS_API_KEY',
-    appId: 'YOUR_IOS_APP_ID',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    iosBundleId: 'YOUR_IOS_BUNDLE_ID',
+    apiKey: 'AIzaSyBhpc-C-k1yY_6ywtWhE7iaRT8aM-W5R0g',
+    appId: '1:1065766178301:ios:5818afe55b1cc373869d94',
+    messagingSenderId: '1065766178301',
+    projectId: 'eisengarden-e083f',
+    storageBucket: 'eisengarden-e083f.firebasestorage.app',
+    iosBundleId: 'com.example.blueberryTemplate',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(

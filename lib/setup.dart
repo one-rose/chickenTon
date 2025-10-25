@@ -14,7 +14,7 @@ import 'package:template/firebase_options.dart';
 /// 2. [enableFirebase] 상수를 true로 변경
 class AppSetup {
   /// Firebase 활성화 여부
-  static const enableFirebase = false;
+  static const enableFirebase = true;
 
   /// 앱 초기화
   static Future<void> initialize() async {
