@@ -14,11 +14,10 @@ final routerProvider = Provider<GoRouter>((ref) {
     navigatorKey: rootNavigatorKey,
     initialLocation: '/splash',
     redirect: (context, state) {
-      // ✅ 로그인 상태에 따른 라우팅 제어
       final isLoggedIn = authState.isLoggedIn;
       final isSplash = state.uri.toString() == '/splash';
 
-      if (isSplash) return null; // SplashPage에서는 체크 후 이동
+      if (isSplash) return null;
       if (!isLoggedIn) return '/login';
       if (isLoggedIn && state.uri.toString() == '/login') return '/home';
       return null;

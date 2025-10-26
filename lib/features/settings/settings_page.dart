@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:template/features/settings/widgets/settings_tile.dart';
 import 'package:template/features/user/repository/auth_repository.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -34,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  _SettingsTile(
+                  SettingsTile(
                     title: '데이터 초기화',
                     titleColor: Colors.red,
                     icon: CupertinoIcons.delete,
@@ -42,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     onTap: () => _showResetDialog(context),
                   ),
                   const SizedBox(height: 12),
-                  _SettingsTile(
+                  SettingsTile(
                     title: '로그아웃',
                     titleColor: Colors.red,
                     icon: CupertinoIcons.square_arrow_right,
@@ -60,13 +61,13 @@ class _SettingsPageState extends State<SettingsPage> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  _SettingsTile(
+                  SettingsTile(
                     title: '고객센터 및 도움말',
                     icon: CupertinoIcons.question_circle,
                     onTap: () {},
                   ),
                   const SizedBox(height: 12),
-                  _SettingsTile(
+                  SettingsTile(
                     title: '앱 버전',
                     icon: CupertinoIcons.info,
                     trailing: const Text(
@@ -209,68 +210,6 @@ class _SettingsPageState extends State<SettingsPage> {
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _SettingsTile extends StatelessWidget {
-  const _SettingsTile({
-    required this.title,
-    required this.icon,
-    this.iconColor,
-    this.titleColor,
-    this.trailing,
-    this.onTap,
-  });
-
-  final String title;
-  final IconData icon;
-  final Color? iconColor;
-  final Color? titleColor;
-  final Widget? trailing;
-  final VoidCallback? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoButton(
-      padding: EdgeInsets.zero,
-      onPressed: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: (iconColor ?? Colors.black).withOpacity(0.08),
-                shape: BoxShape.circle,
-              ),
-              padding: const EdgeInsets.all(8),
-              child: Icon(icon, color: iconColor ?? Colors.black, size: 20),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                title,
-                style: TextStyle(
-                  color: titleColor ?? Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
-            trailing ??
-                const Icon(
-                  CupertinoIcons.chevron_forward,
-                  color: Colors.grey,
-                  size: 18,
-                ),
-          ],
-        ),
       ),
     );
   }
